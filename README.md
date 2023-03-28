@@ -86,3 +86,50 @@ b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Est
     # Print dos dias do mês em que o valor de faturamento diário foi superior à média mensal
     print("- Dias com faturamento acima da média mensal: {}".format(dias_acima_media))
     print("")
+    
+# 4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
+ 
+SP – R$67.836,43
+RJ – R$36.678,66
+MG – R$29.229,88
+ES – R$27.165,48
+Outros – R$19.849,53
+
+Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.
+
+    # Define o faturamento mensal de cada estado
+    faturamento = {
+        'SP': 67836.43,
+        'RJ': 36678.66,
+        'MG': 29229.88,
+        'ES': 27165.48,
+        'Outros': 19849.53
+    }
+
+    # Calcula o faturamento total mensal da distribuidora
+    faturamento_total = sum(faturamento.values())
+    print("- O faturamento total mensal da distribuidora é R$", faturamento_total)
+    # Calcula o percentual de representação de cada estado
+    percentuais = {estado: (valor / faturamento_total) * 100 for estado, valor in faturamento.items()}
+
+    print("\nPercentual de representação que cada estado teve dentro do valor total mensal da distribuidora:")
+    # Imprime o resultado para cada estado
+    for estado, percentual in percentuais.items():
+        print(f"- {estado} tem um percentual de {percentual:.2f}%")
+
+# 5) Escreva um programa que inverta os caracteres de um string.
+ 
+IMPORTANTE:
+a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
+b) Evite usar funções prontas, como, por exemplo, reverse;
+
+    print("--------------------------------------------")
+    string = input("-  Informe uma string: ")
+    print("--------------------------------------------")
+
+    string_invertido = ""
+    for i in range(len(string)-1, -1, -1):
+        string_invertido += string[i]
+
+    print("A string invertida é:", string_invertido)
+    print()
